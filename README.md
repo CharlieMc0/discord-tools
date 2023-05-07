@@ -16,3 +16,15 @@ string. For example, kick any unverified users but ban anyone with "AIRDROP
 SCAM" in the username. 
 
 For this script to work you must have connected your bot to the server with proper permissions
+
+## bait-bot.py
+
+Work In Progress
+
+WARNING: This script may violate the discord terms of service and should only be used for educational purposes.
+
+The script will impersonate a user to join a server with a high number of scam
+attempts. When a scammer attempts to DM the bot, the bot will report the scammer
+to discord and leave the server.
+
+This does not use a Discord "Bot" but rather a user account. You must provide a user's authentication token for the script to work.
