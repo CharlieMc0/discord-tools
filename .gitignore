@@ -163,5 +163,7 @@ cython_debug/
 
 # Output Files
 *report.csv
+*report-*.csv
+
 *.json
 scratchpad.py
