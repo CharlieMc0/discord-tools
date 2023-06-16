@@ -7,8 +7,8 @@ import os
 TOKEN = os.environ['DISCORD_BOT_TOKEN']
 GUILD_NAME = os.environ['DISCORD_GUILD_NAME']
 GUILD_ID = os.environ['DISCORD_GUILD_ID']
-KICK_TIME_THRESHOLD = timedelta(minutes=20)
-BAN_STRING = "ZetaChain |"
+KICK_TIME_THRESHOLD = timedelta(minutes=15)
+BAN_LIST = ["ZetaChain |", "MEE6"]
 
 logging.basicConfig(level=logging.INFO)
 intents = discord.Intents.all()
@@ -43,15 +43,15 @@ async def on_ready():
                                 logging.debug(
                                     f"Member {member.name} (id: {member.id}) has been in the server for more than {KICK_TIME_THRESHOLD} without obtaining a role...")
                                 # If their name matches known bots ban them for good measure
-                                if "ZetaChain |" in member.name:
+                                if any(ban_name.lower() in member.name.lower() for ban_name in BAN_LIST):
                                     logging.info(
-                                        f"Member {member.name} (id: {member.id}) has {BAN_STRING} in their username. Banning...")
-                                    await member.ban(reason="Name matches the name used in bot attacks")
+                                        f"Banning Member {member.name} (id: {member.id}) for matching known bot name")
+                                    await member.ban(reason="Name matches name used by bot attacks")
                                     ban_count += 1
                                 # If it's not a known bot,just kick them in case it's a real user
                                 else:
                                     logging.info(
-                                        f"Kicking member {member.name} (id: {member.id})")
+                                        f"Kicking Member {member.name} (id: {member.id})")
                                     await member.kick()
                                     kick_count += 1
 
