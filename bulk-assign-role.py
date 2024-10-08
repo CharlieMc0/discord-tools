@@ -34,7 +34,7 @@ async def on_ready():
                     member = guild.get_member(user_id)
                     if member:
                         try:
-                            # await member.add_roles(role)
+                            await member.add_roles(role)
                             logging.info(f"Assigned role with ID '{ROLE_ID}' to member {member.name} (id: {member.id})")
                         except Exception as e:
                             logging.error(f"An error occurred while assigning role to member {member.name} (id: {member.id}): {e}")
