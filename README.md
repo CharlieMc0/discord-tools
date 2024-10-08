@@ -16,3 +16,6 @@ string. For example, kick any unverified users but ban anyone with "AIRDROP
 SCAM" in the username. 
 
 For this script to work you must have connected your bot to the server with proper permissions
+
+## Bulk Assign 
+This takes an list of discord user Ids as an input and assigns a new role to them. Role is specificed with env variable - DISCORD_ROLE_ID_FOR_ASSIGNMENT or you can edit value in the script. 

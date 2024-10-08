@@ -160,6 +160,8 @@ cython_debug/
 #.idea/
 
 
+# Input Files
+user_ids.txt
 
 # Output Files
 *report.csv
